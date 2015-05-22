@@ -1,0 +1,22 @@
+{
+  "name": "iprodev-each",
+  "version": "1.0.0",
+  "description": "Array / object / string iteration utility",
+  "dependencies": {
+    "component-type": "1.0.0",
+    "to-function": "2.0.5"
+  },
+  "browser": {
+    "type": "component-type"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "author": "Hemn Chawroka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iprodev/each.git"
+  }
+}
