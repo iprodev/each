@@ -4,7 +4,9 @@
   Array / object / string iteration utility.
 
 ## Installation
+
   Install with [component(1)](http://component.io):
+
     $ component install iprodev/each
 
 ## API
