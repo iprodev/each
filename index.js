@@ -11,14 +11,6 @@ try {
 var toFunction = require('to-function');
 
 /**
- * References.
- */
-
-var has = Object.prototype.hasOwnProperty;
-var keys = Object.keys;
-var each = [].forEach;
-
-/**
  * Iterate the given `obj` and invoke `fn(val, i)`
  * in optional context `ctx`.
  *
@@ -30,7 +22,7 @@ var each = [].forEach;
 
 module.exports = function(obj, fn, ctx){
   fn = toFunction(fn);
-  ctx = ctx || this;
+  ctx = ctx || obj;
   switch (type(obj)) {
     case 'array':
       return array(obj, fn, ctx);
@@ -67,13 +59,9 @@ function string(obj, fn, ctx) {
  */
 
 function object(obj, fn, ctx) {
-  var objKeys = keys(obj);
-
-  each.call(objKeys, function(key) {
-    if (has.call(obj, key)) {
-      fn.call(ctx, key, obj[key]);
-    }
-  });
+  for(var key in obj) {
+    fn.call(ctx, key, obj[key]);
+  }
 }
 
 /**
@@ -86,7 +74,7 @@ function object(obj, fn, ctx) {
  */
 
 function array(obj, fn, ctx) {
-  each.call(obj, function(element, i) {
-    fn.call(ctx, element, i);
+  for (var i = 0, len = obj.length; i < len; ++i) {
+    fn.call(ctx, obj[i], i);
   });
 }

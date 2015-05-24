@@ -1,6 +1,6 @@
 {
   "name": "iprodev-each",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Array / object / string iteration utility",
   "dependencies": {
     "component-type": "1.0.0",
